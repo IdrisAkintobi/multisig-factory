@@ -35,7 +35,8 @@ describe("MultisigFactory Contract Test", function () {
       signers[2],
     ]);
     const firstClonedMultisigAddress =
-      await multisigFactory.getMultisigContract(0);
+      await multisigFactory.getMultisigContract(1);
+
     firstClonedMultisig = await ethers.getContractAt(
       "Multisig",
       firstClonedMultisigAddress
@@ -49,13 +50,13 @@ describe("MultisigFactory Contract Test", function () {
       signers[4],
     ]);
     const secondClonedMultisigAddress =
-      await multisigFactory.getMultisigContract(1);
+      await multisigFactory.getMultisigContract(2);
     secondClonedMultisig = await ethers.getContractAt(
       "Multisig",
       secondClonedMultisigAddress
     );
 
-    // Transfer 50 tokens to both multisig contracts
+    // Transfer 500 tokens to both multisig contracts
     await token.transfer(
       firstClonedMultisigAddress,
       ethers.parseUnits("500", 18)

@@ -4,8 +4,8 @@ pragma solidity ^0.8.26;
 import "./Multisig.sol";
 
 contract MultisigFactory {
-    address[] multisigClones;
-    uint32 public noOfContracts;
+    mapping(uint256 => address) multisigClones;
+    uint256 public noOfContracts;
 
     event MultisigContractCreated(uint256 _index, address _deployedTo);
 
@@ -16,12 +16,9 @@ contract MultisigFactory {
         Multisig newMulsig = new Multisig(_quorum, _validSigners);
 
         _deployedTo = address(newMulsig);
+        _index = ++noOfContracts;
 
-        multisigClones.push(_deployedTo);
-
-        _index = noOfContracts;
-
-        noOfContracts++;
+        multisigClones[_index] = _deployedTo;
 
         emit MultisigContractCreated(_index, _deployedTo);
     }
@@ -30,9 +27,5 @@ contract MultisigFactory {
         uint256 _index
     ) external view returns (address) {
         return multisigClones[_index];
-    }
-
-    function getMultiSigClones() external view returns (address[] memory) {
-        return multisigClones;
     }
 }

@@ -22,8 +22,8 @@ async function main() {
 
   const [clonedContractOneAddress, clonedContractTwoAddress] =
     await Promise.all([
-      multisigFactory.getMultisigContract(0),
       multisigFactory.getMultisigContract(1),
+      multisigFactory.getMultisigContract(2),
     ]);
 
   const [clonedContractOne, clonedContractTwo] = await Promise.all([
@@ -76,10 +76,6 @@ async function main() {
     "clonedContractTwo:: Transaction status after approval >>>",
     txTwoAfterApproval[4]
   );
-
-  // Retrieve all multisig clones
-  const multisigClones = await multisigFactory.getMultiSigClones();
-  console.log("All multisig clones:", multisigClones);
 }
 
 main()
