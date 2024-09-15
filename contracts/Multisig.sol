@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.26;
-import {IERC20} from "../interface/IERC20.sol";
+import "./interface/IERC20.sol";
 
 contract Multisig {
     uint8 public quorum;
