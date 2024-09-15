@@ -7,11 +7,13 @@
     "start:local:node": "npx hardhat node",
     "script:local": "npx hardhat run scripts/MultisigFactory.ts --network localhost",
     "deploy:local": "npm run test && npx hardhat ignition deploy ./ignition/modules/MultisigFactory.ts --network localhost",
-    "deploy": "npm run test && npx hardhat ignition deploy ./ignition/modules/MultisigFactory.ts --network lisk-sepolia --verify"
+    "deploy": "npm run test && npx hardhat ignition deploy ./ignition/modules/MultisigFactory.ts --network lisk-sepolia --verify",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "hardhat": "^2.22.10",
+    "husky": "^9.1.6",
     "prettier-plugin-solidity": "^1.4.1"
   },
   "dependencies": {
