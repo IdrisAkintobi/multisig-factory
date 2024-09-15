@@ -1,5 +1,6 @@
 {
-  "name": "hardhat-project",
+  "name": "multisig-factory",
+  "description": "This project demonstrates creation of Multisig wallet using a factory contract.",
   "scripts": {
     "build": "npm run lint && npx hardhat compile",
     "test": "npm run build && REPORT_GAS=true npx hardhat test",
