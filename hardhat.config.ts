@@ -4,7 +4,7 @@ import { HardhatUserConfig, vars } from "hardhat/config";
 const INFURA_API_KEY = vars.get("INFURA_API_KEY");
 const DO_NOT_LEAK = vars.get("DO_NOT_LEAK");
 const ETHERSCAN_API_KEY = vars.get("ETHERSCAN_API_KEY");
-const LISK_RPC_URL = vars.get("LISK_RPC_URL");
+const LISK_SEPOLIA_RPC_URL = vars.get("LISK_SEPOLIA_RPC_URL");
 
 const config: HardhatUserConfig = {
   solidity: "0.8.26",
@@ -17,7 +17,7 @@ const config: HardhatUserConfig = {
       accounts: [DO_NOT_LEAK],
     },
     "lisk-sepolia": {
-      url: LISK_RPC_URL,
+      url: LISK_SEPOLIA_RPC_URL,
       accounts: [DO_NOT_LEAK],
       gasPrice: 1000000000,
     },
